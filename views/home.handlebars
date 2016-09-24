@@ -1,0 +1,19 @@
+
+<div class="container">
+    <h1>{{title}}</h1>
+    <p>Welcome to {{title}}</p>
+    <h3>Login</h3>
+
+    <form action="users/login" method="post">
+        <input type="text" name="username" placeholder="username">
+        <br>
+        <input type="text" name="password" placeholder="password">
+        <br><br>
+        <input type="submit" value="log in">
+    </form>
+    <br>
+    <a href="/users/signup">New account </a>
+    <br><br>
+    <p>user:</p>
+    {{user}}
+</div>

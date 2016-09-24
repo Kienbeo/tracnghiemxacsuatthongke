@@ -1,0 +1,25 @@
+<div class="container">
+    <h3>Units: </h3>
+    <br>
+    <ul>
+        {{#each units}}
+            <li><a href="">Bài {{number}} - {{name}}</a>
+                <br>
+                <p>{{content}}</p>
+                {{#if type1}}
+                    <input type='text' name='answer' placeholder='answer'>
+                {{/if}}
+                {{#if type2}}
+                    <input type='radio' name='{{number}}' value='A'> A:{{answer1}}
+                    <input type='radio' name='{{number}}' value='B'> B:{{answer2}}
+                    <input type='radio' name='{{number}}' value='C'> C:{{answer3}}
+                    <input type='radio' name='{{number}}' value='D'> D:{{answer4}}
+                {{/if}}
+                <h4>Answer: {{answer}}</h4>
+            </li>
+            <br>
+        {{/each}}
+    </ul>
+    <br>
+    <a href="{{id}}/createunit" class="btn btn-primary">New unit</a>
+</div>

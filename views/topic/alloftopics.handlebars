@@ -1,0 +1,12 @@
+<div class="container">
+    <h3>Topics :</h3>
+    <br>
+
+    <ul>
+        {{#each topics}}
+            <li><a href="/topics/{{_id}}">Bài {{number}} - {{name}} </a></li>
+        {{/each}}
+    </ul>
+    <br>
+    <a href="/topics/creater" class="btn btn-primary">new topic</a>
+</div>

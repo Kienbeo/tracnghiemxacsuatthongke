@@ -1,0 +1,43 @@
+<div class="container">
+    <form action="/topics/{{id}}/createunit" method="post" id="form1" class="">
+        <h2>Create topic:</h2>
+        <br>
+        <label>Type:</label>
+        <select name="type" id="mySelect" onclick="changeType()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        <br>
+        <input type="text" name="number" placeholder="number">
+        <br>
+        <input type="text" name="name" placeholder="name">
+        <br>
+        <textarea name="content" placeholder="content"></textarea>
+        <br>
+        <label>Answer: </label><br>
+        <div id="type2" style="display: none;">
+            <input type="text" name="answer1" placeholder="A">
+            <br>
+            <input type="text" name="answer2" placeholder="B">
+            <br>
+            <input type="text" name="answer3" placeholder="C">
+            <br>
+            <input type="text" name="answer4" placeholder="D">
+        </div>
+        <input type="text" name="answer" placeholder="answer">
+        <br>
+        <script>
+            function changeType() {
+                var type = document.getElementById("mySelect").value;
+                if(type==1){
+                    document.getElementById("type2").setAttribute("style", "display: none;");
+                }else if (type == 2) {
+                    document.getElementById("type2").setAttribute("style", "display: block;");
+                }
+            }
+        </script>
+
+        <br><br>
+        <input type="submit">
+    </form>
+</div>

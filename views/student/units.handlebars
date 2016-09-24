@@ -1,0 +1,38 @@
+<script>
+    Handlebars.registerHelper("iftype", function (type) {
+        var type = Handlebars.Utils.escapeExpression(type);
+        if (type == "1") {
+            str = "<input type='text' name='answer' placeholder='answer'>";
+        } else {
+            str = "<input type='radio' name='answer1' value='A'> A:";
+        }
+        return new Handlebars.SafeString(str);
+    });
+</script>
+
+<div class="container">
+    <h3>Units: </h3>
+    <br>
+    <ul>
+        {{#each units}}
+            <li>
+                <a href="">Bài {{number}} - {{name}}</a>
+                <br>
+                <p>{{content}}</p>
+                {{#if type1}}
+                    <input type='text' name='answer' placeholder='answer'>
+                {{/if}}
+                {{#if type2}}
+                    <input type='radio' name='{{number}}' value='A'> A:{{answer1}}
+                    <input type='radio' name='{{number}}' value='B'> B:{{answer2}}
+                    <input type='radio' name='{{number}}' value='C'> C:{{answer3}}
+                    <input type='radio' name='{{number}}' value='D'> D:{{answer4}}
+                {{/if}}
+            </li>
+            <br>
+        {{/each}}
+        <br>
+        <a href="" class="btn btn-primary">Lưu bài</a>
+        <br>
+    </ul>
+</div>
